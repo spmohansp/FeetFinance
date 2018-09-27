@@ -17,13 +17,13 @@
             <div class="col-6">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-dateFrom">From Date</label>
-                    <input class="c-input" type="date" name="dateFrom" id="entry-dateFrom">
+                    <input class="c-input DateChange" type="date" max="<?php echo date('Y-m-d'); ?>" name="dateFrom" id="entry-dateFrom">
                 </div>
             </div>
             <div class="col-6">
                 <div class="c-field u-mb-medium">
-                    <label class="c-field__label" for="entry-dateTo">To Date</label>
-                    <input class="c-input" type="date" name="dateTo" id="entry-dateTo">
+                    <label class="c-field__label DateChange" for="entry-dateTo">To Date</label>
+                    <input class="c-input" type="date" max="<?php echo date('Y-m-d'); ?>" name="dateTo" id="entry-dateTo">
                 </div>
             </div>
             <div class="col-6">
@@ -84,19 +84,20 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-startkm">Start KM</label>
-                    <input type="number" class="c-input" name="startKm" id="entry-startkm">
+                    <input type="number" class="c-input CalculateKm" min="0" name="startKm" id="entry-startkm">
                 </div>
             </div>
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-endkm">End KM</label>
-                    <input type="number" class="c-input" name="endKm" id="entry-endkm">
+                    <input type="number" class="c-input CalculateKm" min="0" name="endKm" id="entry-endkm">
                 </div>
             </div>
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-total">Total</label>
-                    <input type="number" class="c-input" name="total" id="entry-total">
+                    <input type="number" class="c-input" name="total" id="entry-totalkm" required="" readonly="">
+                    <div id="ErrorTotal"></div>
                 </div>
             </div>
             <div class="col-6">
@@ -150,21 +151,21 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-ton">Tons</label>
-                    <input type="number" class="c-input" name="ton" id="entry-ton">
+                    <input type="number" class="c-input" min="0" name="ton" id="entry-ton">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-billAmount">Bill Amount</label>
-                    <input type="number" class="c-input" name="billAmount" id="entry-billAmount">
+                    <input type="number" class="c-input calculateEntryValue" min="0" name="billAmount" id="entry-billAmount">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-advance">Advance</label>
-                    <input type="number" class="c-input" name="advance" id="entry-advance">
+                    <input type="number" class="c-input calculateEntryValue" min="0" name="advance" id="entry-advance">
                 </div>
             </div>
 
@@ -172,28 +173,28 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-comission">Comission</label>
-                    <input type="number" class="c-input" name="comission" id="entry-comission">
+                    <input type="number" class="c-input calculateEntryValue" min="0" name="comission" id="entry-comission">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-loadingMamool">ஏற்றுக்கூலி</label>
-                    <input type="number" class="c-input" name="loadingMamool" id="entry-loadingMamool">
+                    <input type="number" class="c-input calculateEntryValue" min="0" name="loadingMamool" id="entry-loadingMamool">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-unLoadingMamool">இறக்குக்கூலி</label>
-                    <input type="number" class="c-input" name="unLoadingMamool" id="entry-unLoadingMamool">
+                    <input type="number" class="c-input calculateEntryValue" min="0" name="unLoadingMamool" id="entry-unLoadingMamool">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-balance">Balance</label>
-                    <input type="number" class="c-input" name="balance" id="entry-balance">
+                    <input type="number" class="c-input" min="0" name="balance" id="entry-balance" readonly="">
                 </div>
             </div>
         </div>

@@ -17,13 +17,13 @@
             <div class="col-6">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-dateFrom">From Date</label>
-                    <input class="c-input" type="date" value="{{$entry->dateFrom}}" name="dateFrom" id="entry-dateFrom">
+                    <input class="c-input DateChange" type="date" value="{{$entry->dateFrom}}" name="dateFrom" id="entry-dateFrom">
                 </div>
             </div>
             <div class="col-6">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-dateTo">To Date</label>
-                    <input class="c-input" type="date" value="{{$entry->dateTo}}" name="dateTo" id="entry-dateTo">
+                    <input class="c-input DateChange" type="date" value="{{$entry->dateTo}}" name="dateTo" id="entry-dateTo">
                 </div>
             </div>
             <div class="col-6">
@@ -94,19 +94,19 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-startkm">Start KM</label>
-                    <input type="number" class="c-input" value="{{$entry->startKm}}" name="startKm" id="entry-startkm">
+                    <input type="number" class="c-input CalculateKm" min="0" value="{{$entry->startKm}}" name="startKm" id="entry-startkm">
                 </div>
             </div>
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-endkm">End KM</label>
-                    <input type="number" class="c-input" value="{{$entry->endKm}}" name="endKm" id="entry-endkm">
+                    <input type="number" class="c-input CalculateKm" min="0" value="{{$entry->endKm}}" name="endKm" id="entry-endkm">
                 </div>
             </div>
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-total">Total</label>
-                    <input type="number" class="c-input" value="{{$entry->total}}" name="total" id="entry-total">
+                    <input type="number" class="c-input" value="{{$entry->total}}" name="total" id="entry-totalkm" readonly="">
                 </div>
             </div>
             <div class="col-6">
@@ -160,21 +160,21 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-ton">Tons</label>
-                    <input type="number" class="c-input" value="{{$entry->ton}}" name="ton" id="entry-ton">
+                    <input type="number" class="c-input" min="0" value="{{$entry->ton}}" name="ton" id="entry-ton">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-billAmount">Bill Amount</label>
-                    <input type="number" class="c-input" value="{{$entry->billAmount}}" name="billAmount" id="entry-billAmount">
+                    <input type="number" class="c-input calculateEntryValue" min="0" value="{{$entry->billAmount}}" name="billAmount" id="entry-billAmount">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-advance">Advance</label>
-                    <input type="number" class="c-input" value="{{$entry->advance}}" name="advance" id="entry-advance">
+                    <input type="number" class="c-input calculateEntryValue" min="0" value="{{$entry->advance}}" name="advance" id="entry-advance">
                 </div>
             </div>
 
@@ -182,21 +182,21 @@
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-comission">Comission</label>
-                    <input type="number" class="c-input" value="{{$entry->comission}}" name="comission" id="entry-comission">
+                    <input type="number" class="c-input calculateEntryValue" min="0" value="{{$entry->comission}}" name="comission" id="entry-comission">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-loadingMamool">ஏற்றுக்கூலி</label>
-                    <input type="number" class="c-input" value="{{$entry->loadingMamool}}" name="loadingMamool" id="entry-loadingMamool">
+                    <input type="number" class="c-input calculateEntryValue" min="0" value="{{$entry->loadingMamool}}" name="loadingMamool" id="entry-loadingMamool">
                 </div>
             </div>
 
             <div class="col-4">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-unLoadingMamool">இறக்குக்கூலி</label>
-                    <input type="number" class="c-input" value="{{$entry->unLoadingMamool}}" name="unLoadingMamool" id="entry-unLoadingMamool">
+                    <input type="number" class="c-input calculateEntryValue" min="0" value="{{$entry->unLoadingMamool}}" name="unLoadingMamool" id="entry-unLoadingMamool">
                 </div>
             </div>
 
