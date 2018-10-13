@@ -112,11 +112,16 @@
                     <input type="text" class="c-input" name="locationTo" id="entry-locationTo">
                 </div>
             </div>
+
             <div class="col-8">
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="entry-loadType">Load Type</label>
                     <select class="c-input" name="loadType" id="entry-loadType">
                         <option value="">Select Load Type</option>
+                        @foreach (App\LoadType::get() as $loadType) 
+                            <option value="{{$loadType->id}}">{{$loadType->loadType}}</option>
+                        @endforeach
+<!--    
                         <option value="Books_or_Paper_Rolls">Books or Paper Rolls</option>
                         <option value="Building_Materials">Building Materials</option>
                         <option value="cement">Cement</option>
@@ -144,7 +149,7 @@
                         <option value="Textiles">Textiles</option>
                         <option value="Tyres_and_Rubber_Products">Tyres and Rubber Products</option>
                         <option value="Vehicles_and_Rubber_Products">Vehicles and Rubber Products</option>
-                        <option value="Others_or_General">Others or General</option>
+                        <option value="Others_or_General">Others or General</option> -->
                     </select>
                 </div>
             </div>

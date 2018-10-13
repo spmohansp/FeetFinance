@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin'], function () {
+  Route::get('/', 'AdminAuth\LoginController@showLoginForm')->name('login');
   Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'AdminAuth\LoginController@login');
   Route::post('/logout', 'AdminAuth\LoginController@logout')->name('logout');
@@ -30,6 +31,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::group(['prefix' => 'client'], function () {
+  Route::get('/', 'ClientAuth\LoginController@showLoginForm')->name('login');
   Route::get('/login', 'ClientAuth\LoginController@showLoginForm')->name('login');
   Route::post('/login', 'ClientAuth\LoginController@login');
   Route::post('/logout', 'ClientAuth\LoginController@logout')->name('logout');

@@ -49,11 +49,23 @@ Route::get('/entry', 'ClientsControllers\EntryController@add');
 Route::post('/entry', 'ClientsControllers\EntryController@save')->name('saveentry');
 Route::delete('/entry/{id}/delete', 'ClientsControllers\EntryController@delete')->name('deletEntry');
 
-
-
+// VIEW ENTRY
 Route::get('/viewentry', 'ClientsControllers\EntryController@viewEntry');
 Route::get('/entry/{id}/view', 'ClientsControllers\EntryController@showOne');
 Route::get('/entry/{id}/edit', 'ClientsControllers\EntryController@editEntry')->name('editEntry');
 Route::post('/entry/{id}/edit', 'ClientsControllers\EntryController@updateEntry')->name('updateEntry');
 
 
+// EXPENSE 
+Route::get('/expense', 'ClientsControllers\ExpenseController@add');
+Route::post('/expense', 'ClientsControllers\ExpenseController@save')->name('addExpense');
+
+
+
+
+
+
+
+
+Route::get('/income', 'ClientsControllers\IncomeController@add');
+Route::post('/income', 'ClientsControllers\IncomeController@save')->name('addIncome');
