@@ -24,8 +24,8 @@
                     </li>
 
                     <li>
-                        <a class="c-sidebar__link @yield('staff')" href="#">
-                            <i class="c-sidebar__icon feather icon-hash"></i>Staff
+                        <a class="c-sidebar__link @yield('vehicleType')" href="{{url('admin/vehicleType')}}">
+                            <i class="c-sidebar__icon feather icon-hash"></i>Vehicle Type
                         </a>
                     </li>
                     <li>
