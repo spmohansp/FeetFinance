@@ -58,3 +58,7 @@ Route::group(['prefix' => 'manager'], function () {
   Route::get('/password/reset', 'ManagerAuth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
   Route::get('/password/reset/{token}', 'ManagerAuth\ResetPasswordController@showResetForm');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
