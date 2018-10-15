@@ -26,7 +26,8 @@ class CreateEntriesTable extends Migration
             $table->string('total')->nullable();
             $table->string('locationFrom')->nullable();
             $table->string('locationTo')->nullable();
-            $table->string('loadType')->nullable();
+            $table->integer('loadType')->unsigned()->nullable();
+            $table->foreign('loadType')->references('id')->on('load_types');
             $table->string('ton')->nullable();
             $table->string('billAmount')->nullable();
             $table->string('advance')->nullable();

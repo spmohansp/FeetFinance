@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\ClientsControllers;
 
 use App\Vehicle;
+use App\VehicleType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -17,15 +18,15 @@ class VehicleController extends Controller
     }
 
     public function add(){
-        return view('client.masters.vehicle.add');
+        $vehicleTypes=VehicleType::get()->all();
+        return view('client.masters.vehicle.add',compact('vehicleTypes'));
     }
 
     public function view($id){
         try {
             $vehicle = Vehicle::findOrfail($id);
-
-//            dd($vehicle);
-            return view('client.masters.vehicle.view', compact('vehicle'));
+             $vehicleTypes=VehicleType::get()->all();
+            return view('client.masters.vehicle.view', compact('vehicle','vehicleTypes'));
         }catch (Exception $e){
             return back()->with('danger','Something went wrong!');
         }
@@ -49,7 +50,8 @@ class VehicleController extends Controller
     public function edit($id){
         try{
             $vehicle = Vehicle::findOrfail($id);
-            return view('client.masters.vehicle.edit',compact('vehicle'));
+            $vehicleTypes=VehicleType::get()->all();
+            return view('client.masters.vehicle.edit',compact('vehicle','vehicleTypes'));
         }catch (Exception $e){
             return back()->with('danger','Something went wrong!');
         }

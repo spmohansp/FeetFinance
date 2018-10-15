@@ -18,7 +18,8 @@ class CreateVehiclesTable extends Migration
             $table->string('ownerName');
             $table->string('vehicleNumber');
             $table->string('vehicleName');
-            $table->string('vehicleType');
+            $table->integer('vehicleType')->unsigned();
+            $table->foreign('vehicleType')->references('id')->on('vehicle_types');
             $table->integer('clientid')->unsigned();
             $table->foreign('clientid')->references('id')->on('clients');
             $table->timestamps();

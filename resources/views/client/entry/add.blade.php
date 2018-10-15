@@ -118,7 +118,7 @@
                     <label class="c-field__label" for="entry-loadType">Load Type</label>
                     <select class="c-input" name="loadType" id="entry-loadType">
                         <option value="">Select Load Type</option>
-                        @foreach (App\LoadType::get() as $loadType) 
+                        @foreach ($loadTypes as $loadType) 
                             <option value="{{$loadType->id}}">{{$loadType->loadType}}</option>
                         @endforeach
 <!--    

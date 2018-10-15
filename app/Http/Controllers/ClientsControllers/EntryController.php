@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Entry;
 use App\Client;
 use App\StaffsWork;
+use App\LoadType;
 use Illuminate\Support\Facades\Auth; 
 
 class EntryController extends Controller
@@ -20,7 +21,8 @@ class EntryController extends Controller
     }
 
     public function add(){
-        return view('client.entry.add');
+        $loadTypes=LoadType::get()->all();
+        return view('client.entry.add',compact('loadTypes'));
     }
 
     public function save(){
@@ -58,7 +60,8 @@ class EntryController extends Controller
     public function showOne($id){
         try {
             $entry = Entry::findOrfail($id);
-            return view('client.entry.show',compact('entry'));
+            $loadTypes=LoadType::get()->all();
+            return view('client.entry.show',compact('entry','loadTypes'));
         }catch (Exception $e){
             return back()->with('danger','Something went wrong!');
         }
@@ -67,7 +70,8 @@ class EntryController extends Controller
 
     public function editEntry($id){
         $entry = Entry::findOrfail($id);
-        return view('client.entry.edit',compact('entry'));
+         $loadTypes=LoadType::get()->all();
+        return view('client.entry.edit',compact('entry','loadTypes'));
     }
 
     public function delete($id){

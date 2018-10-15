@@ -32,7 +32,12 @@
                 <div class="c-field u-mb-medium">
                     <label class="c-field__label" for="customer-phone1">Vehicle Type</label>
                     <select class="c-input" name="vehicleType" id="vehicle-type">
-                        <option value="Open_Body_-_10_W">Open Body - 10 W</option>
+                        <option value="">Select Vehicle Type</option>
+                        @foreach($vehicleTypes as $vehicleType)
+                            <option value="{{$vehicleType->id}}">{{$vehicleType->vehicleType}}</option>
+                        @endforeach
+
+<!--                         <option value="Open_Body_-_10_W">Open Body - 10 W</option>
                         <option value="Open_Body_-_12_W">Open Body - 12 W</option>
                         <option value="Open_Body_-_14_W">Open Body - 14 W</option>
                         <option value="Pickup_Truck">Pickup Truck</option>
@@ -41,7 +46,7 @@
                         <option value="Trailer_-_12_W">Trailer - 12 W</option>
                         <option value="Trailer_-_14_W">Trailer - 14 W</option>
                         <option value="Trailer_-_22_W">Trailer - 22 W</option>
-                        <option value="Truck_-_6_W">Truck - 6 W</option>
+                        <option value="Truck_-_6_W">Truck - 6 W</option> -->
                     </select>
                 </div>
 
